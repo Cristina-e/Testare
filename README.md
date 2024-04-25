@@ -49,5 +49,8 @@ Pentru proietul nostru am ales sa folosim Selenium, sacrificand astfel viteza de
 
 https://www.youtube.com/playlist?list=PLZ4IZLqUlnoaoI0MhAzQh_RT47fdUF2Lq
 
+-Comparatie viteza: 
+
+<img width="526" alt="image" src="https://github.com/Cristina-e/Testare/assets/82153676/c960d425-fcbe-469d-8bfb-98d79d8d9905">
 
 
