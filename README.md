@@ -1,5 +1,5 @@
 
-Comparare frameworku-uri:
+Comparare framework-uri:
 
 Selenium, introdus de Jason Huggins în 2004, este un instrument utilizat la scara larga pentru automatizarea browserelor web. A strâns un sprijin semnificativ din partea comunității, cu aproape 30.000 de commit-uri pe GitHub de la voluntari. Selenium asigură experiențe consistente pentru utilizatori pe diverse browsere și dispozitive și include componente precum Webdriver, Selenium IDE și Selenium Grid. Comunitatea sa robustă și documentația extinsă îl fac o alegere preferată pentru nevoile de testare web.
 
