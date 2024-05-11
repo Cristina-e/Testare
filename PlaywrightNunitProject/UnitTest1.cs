@@ -9,33 +9,33 @@ namespace PlaywrightNunitProject
     [Parallelizable(ParallelScope.Self)]
     [TestFixture]
     public class Tests : PageTest
-    {
+    {   
         [Test]
         public async Task TestCreator()
-        {
+        {   
             await Page.GotoAsync("http://localhost:5106/");
             // Click on the navbar-toggler-icon
-            await Page.ClickAsync(".navbar-toggler-icon");
+            //await Page.ClickAsync(".navbar-toggler-icon");
             await Page.ClickAsync("text=Login");
-            /*
+            
             // Click on the Registration link
-            await Page.ClickAsync("text=Registration");
+            //await Page.ClickAsync("text=Registration");
 
             // Fill in the registration form
-            await Page.FillAsync("#Username", "creator1", new() { Timeout = 3000 });
-            await Page.FillAsync("#Password", "creator1", new() { Timeout = 3000 });
-            await Page.FillAsync("#PasswordConfirm", "creator1", new() { Timeout = 3000 });
-            await Page.SelectOptionAsync("#Role", "Quiz Creator", new() { Timeout = 5000 });
-            await Page.ClickAsync("button:text('Register')", new() { Timeout = 9000 });
-            */
+            //await Page.FillAsync("#Username", "creator1", new() { Timeout = 3000 });
+            //await Page.FillAsync("#Password", "creator1", new() { Timeout = 3000 });
+            //await Page.FillAsync("#PasswordConfirm", "creator1", new() { Timeout = 3000 });
+            //await Page.SelectOptionAsync("#Role", "Quiz Creator", new() { Timeout = 5000 });
+            //await Page.ClickAsync("button:text('Register')", new() { Timeout = 9000 });
+            
             // Log in
             await Page.FillAsync("#Username", "creator1", new() { Timeout = 10000 });
             await Page.FillAsync("#Password", "creator1", new() { Timeout = 10000 });
-            await Page.ClickAsync("button:text('Login')", new() { Timeout = 9000 });
+            await Page.ClickAsync("button:text('Login')", new() { Timeout = 5000 });
 
             // Navigate to My quizzes
-            await Page.ClickAsync(".navbar-toggler-icon", new() { Timeout = 9000 });
-            await Page.WaitForSelectorAsync("text=My quizzes", new() { Timeout = 10000 });
+           // await Page.ClickAsync(".navbar-toggler-icon", new() { Timeout = 9000 });
+           //await Page.WaitForSelectorAsync("text=My quizzes", new() { Timeout = 10000 });
 
             // Click on the "My quizzes" link
             await Page.ClickAsync("text=My quizzes");
@@ -82,7 +82,7 @@ namespace PlaywrightNunitProject
             await Page.ClickAsync("#btnFinish");
 
             // Navigate to All quizzes
-            await Page.ClickAsync(".navbar-toggler-icon");
+            //await Page.ClickAsync(".navbar-toggler-icon");
             await Page.ClickAsync("text=All quizzes");
 
             // Delete the quiz
@@ -90,7 +90,7 @@ namespace PlaywrightNunitProject
             await Page.ClickAsync(".btn-primary");
 
             // Navigate to Quiz results
-            await Page.ClickAsync(".navbar-toggler-icon");
+            //await Page.ClickAsync(".navbar-toggler-icon");
             await Page.ClickAsync("text=Quiz results");
 
             // Filter and sort quiz results
@@ -100,7 +100,7 @@ namespace PlaywrightNunitProject
             await Page.ClickAsync("#filterBtn");
 
             // Logout
-            await Page.ClickAsync(".navbar-toggler-icon");
+            //await Page.ClickAsync(".navbar-toggler-icon");
             await Page.ClickAsync("text=Logout");
         }
     }
