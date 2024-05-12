@@ -54,3 +54,7 @@ https://www.youtube.com/playlist?list=PLZ4IZLqUlnoaoI0MhAzQh_RT47fdUF2Lq
 -Prezentare:
 [Testare.pptx](https://github.com/Cristina-e/Testare/files/15287114/Testare.pptx)
 
+sau
+
+https://unibucro0-my.sharepoint.com/:p:/r/personal/elena_enciu_s_unibuc_ro/_layouts/15/Doc.aspx?sourcedoc=%7Bf108c472-b51e-4a0a-b507-582989ac73bb%7D&action=embedview&wdAr=1.7777777777777777
+
