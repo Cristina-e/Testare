@@ -16,7 +16,7 @@ using System.Drawing;
 
 namespace SeleniumNunitProject
 {
-    [TestFixture(1200)]
+    [TestFixture(600)]
     public class Tests
     {
         private IWebDriver driver;
@@ -33,6 +33,7 @@ namespace SeleniumNunitProject
         {   
             BrowserType browserType = BrowserType.Chrome; 
             driver = DriverFactory.GetDriver(browserType);
+            //testam tipuri diferite de browser
             driver.Manage().Window.Size = new System.Drawing.Size(width_, 600);
             driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             wait = new WebDriverWait(driver, TimeSpan.FromSeconds(10));
@@ -205,6 +206,49 @@ namespace SeleniumNunitProject
         }
 
         [Test]
+        public void TestRegistrationGresit()
+        {
+            driver.Navigate().GoToUrl("http://localhost:5106/");
+            //driver.Manage().Window.Maximize();
+            //driver.FindElement(By.CssSelector(".navbar-toggler-icon")).Click();
+            //ClickNavItem_(By.LinkText("Login"));
+
+            ClickNavItem_(By.LinkText("Registration"));
+            ScrollToElement(By.Id("Username")).Click();
+            ScrollToElement(By.Id("Username")).SendKeys("creator1");
+            ScrollToElement(By.Id("Password")).Click();
+            ScrollToElement(By.Id("Password")).SendKeys("creator1");
+            ScrollToElement(By.Id("PasswordConfirm")).Click();
+            ScrollToElement(By.Id("PasswordConfirm")).SendKeys("creator");
+            SelectElement selectElement = new SelectElement(ScrollToElement(By.Id("Role")));
+            selectElement.SelectByText("Quiz Creator");
+            //Thread.Sleep(2000);
+            ScrollToElement(By.XPath("//button[text()='Register']")).Click();
+
+            Thread.Sleep(2000);
+            Assert.That(driver.SwitchTo().Alert().Text, Is.EqualTo("Passwords do not coincide!"));
+            Assert.Pass();
+        }
+        [Test]
+        public void TestLoginGresit()
+        {
+            driver.Navigate().GoToUrl("http://localhost:5106/");
+            //driver.Manage().Window.Maximize();
+            //driver.FindElement(By.CssSelector(".navbar-toggler")).Click();
+            ClickNavItem_(By.LinkText("Login"));
+            ScrollToElement(By.Id("Username")).Click();
+            ScrollToElement(By.Id("Username")).SendKeys("admin");
+            ScrollToElement(By.Id("Password")).Click();
+            ScrollToElement(By.Id("Password")).SendKeys("adin");
+            Thread.Sleep(2000);
+            ScrollToElement(By.XPath("//button[text()='Login']")).Click();
+            Thread.Sleep(2000);
+            Assert.That(driver.SwitchTo().Alert().Text, Is.EqualTo("Invalid credentials!"));
+            Assert.Pass();
+
+        }
+
+        [Test]
         public void TestAdmin() {
             driver.Navigate().GoToUrl("http://localhost:5106/");
             //driver.Manage().Window.Maximize();
@@ -293,6 +337,7 @@ namespace SeleniumNunitProject
             ScrollToElement(By.Id("filterBtn")).Click();
             //driver.FindElement(By.CssSelector(".navbar-toggler-icon")).Click();
             ClickNavItem_(By.LinkText("Logout"));
+            Assert.Pass();
         }
 
         [Test]
@@ -357,6 +402,7 @@ namespace SeleniumNunitProject
             ScrollToElement(By.CssSelector(".btn")).Click();
            // driver.FindElement(By.CssSelector(".navbar-toggler-icon")).Click();
             ClickNavItem_(By.LinkText("Logout"));
+            Assert.Pass(); 
         }
     }
     
