@@ -1,6 +1,3 @@
-
-Comparare framework-uri:
-
 Selenium, introdus de Jason Huggins în 2004, este un instrument utilizat la scara larga pentru automatizarea browserelor web. A strâns un sprijin semnificativ din partea comunității, cu aproape 30.000 de commit-uri pe GitHub de la voluntari. Selenium asigură experiențe consistente pentru utilizatori pe diverse browsere și dispozitive și include componente precum Webdriver, Selenium IDE și Selenium Grid. Comunitatea sa robustă și documentația extinsă îl fac o alegere preferată pentru nevoile de testare web.
 
 Webdriver permite controlul browserelor pentru testarea aplicațiilor web. Selenium IDE înregistrează interacțiunile cu paginile web pentru a crea scripturi de test reutilizabile. Selenium Grid facilitează rularea testelor pe mai multe mașini simultan, îmbunătățind scalabilitatea. Împreună, aceste componente formează o soluție cuprinzătoare de testare pentru aplicațiile web.
@@ -9,38 +6,40 @@ Selenium este constant updatat reflectand angajamentul continuu al comunității
 
 Playwright, un instrument mai nou pentru testarea aplicațiilor web end-to-end, oferă viteză și ușurință în utilizare. Instrumente Playwright precum Codegen, Playwright Inspector și Traceviewer ajută la crearea și depanarea testelor.
 
-Comparând Playwright și Selenium:
+Aplicatia de baza pe care o vom testa a fost dezvoltata in cadrul cursului de "Dezvoltare a aplicatiilor web" din anul 4 semestrul 1 si avea ca scop realizarea de quiz-uri cu o implementare bazata pe gamification (elemente de recompensa in aplicatie, de exemplu puncte).
 
-Precondiții: Selenium necesită drivere de browser, în timp ce Playwright are nevoie doar de NodeJS. Acest proces de configurare simplificat al Playwright facilitează începerea testării automate.
+COMPARATIE
 
-Limbi Suportate: Selenium suportă mai multe limbi, inclusiv Python, Java și Ruby, în timp ce Playwright suportă JavaScript, TypeScript și altele. Acest suport mai larg al limbilor al Selenium-ului poate fi avantajos pentru echipele cu abilități diverse.
+* Să le comparăm pentru a vedea care ar putea fi mai avantajos în funcție de nevoile noastre:
 
-Test Runner: Playwright are propriul său runner, în timp ce Selenium se bazează pe runner-e terțe. Desi acest lucru pare a fi un avantaj pentru Playwright dar in cazul meu (flosind ambele framework-uri cu NUnit) am observat ca prefer un runner tert.
+-Limbaj de programare suportat:
+Selenium: Suportă multiple limbi de programare, inclusiv Java, Python, C#, JavaScript, Ruby, etc.
+Playwright: Suportă JavaScript/TypeScript, Python și C#.
 
-Locatori de Elemente: Selenium folosește diferiți locatori precum Id, Xpath și CSS, în timp ce Playwright are API de locatori. Sistemul simplificat de locatori al Playwright reduce complexitatea scripturilor de testare dar Selenium ofera o varietate mai mare de locatori care ne da mai mult control asupra codului .
+-Performanță și stabilitate:
+Selenium: Uneori poate fi instabil și poate avea probleme de performanță.
+Playwright: Cunoscut pentru stabilitatea și performanța sa, oferă o experiență mai rapidă și mai fiabilă.
 
-Așteptări: Playwright include un auto-așteptare încorporat, reducând fragilitatea, în timp ce Selenium necesită așteptări explicite. Această caracteristică încorporată de auto-așteptare a Playwright simplifică dezvoltarea scripturilor de testare.
+-Suport pentru multiple browsere:
+Selenium: Suportă o gamă largă de browsere, inclusiv Chrome, Firefox, Safari, Edge, etc.
+Playwright: Are un suport integrat pentru Chrome, Firefox, WebKit (Safari), și a început să ofere suport experimental pentru Microsoft Edge.
 
-Execuție Paralelă a Testelor: Ambele suportă testarea paralelă.
+API și funcționalități:
+Selenium: API-ul este mai vechi și are o sintaxă mai puțin intuitivă în comparație cu Playwright.
+Playwright: API-ul său este mai modern și mai ușor de înțeles. Oferă funcționalități avansate, cum ar fi capturarea video a testelor, simularea de dispozitive mobile, testarea reactivă și multe altele.
 
-Testare Vizuală: Playwright simplifică testarea vizuală cu instrumente încorporate, în timp ce Selenium necesită biblioteci externe. 
+Community și suport:
+Selenium: Are o comunitate mare și este folosit pe scară largă, ceea ce înseamnă că poți găsi multe resurse și suport online.
+Playwright: Are o comunitate în creștere rapidă și primește sprijin din partea Microsoft, ceea ce îi oferă o perspectivă promițătoare în ceea ce privește suportul și dezvoltarea viitoare.
 
-Înregistrare și Capturi de Ecran a Testelor: Playwright oferă aceste caracteristici din oficiu, în timp ce Selenium poate necesita extensii. 
+Preț:
+Ambele sunt proiecte open-source și gratuite de utilizat.
 
-Aserțiunile: sunt folosite pentru a verifica dacă starea aplicației web în cauză este cea așteptată. Pentru a utiliza aserțiuni în Selenium, puteți utiliza cuvântul cheie assert încorporat în codul dvs. sau o bibliotecă de aserții terță parte, cum ar fi NUnit, JUnit sau TestNG.
-
-În timp ce Playwright folosește JEST. Această bibliotecă oferă o mulțime de potriviri precum toEqual, toContain, toMatch, toMatchSnapshot și multe altele. Playwright îl extinde și cu potriviri asincrone care vor aștepta până când condiția așteptată este îndeplinită.
-
-Raportare a Testelor: Playwright oferă raportoare încorporate, în timp ce Selenium necesită extensii terțe. 
-
-Performanță: Execuția scripturilor Playwright este mai rapidă datorită protocolului său de comunicare. Acest protocol de comunicare optimizat al Playwright contribuie la o executare mai rapidă a testelor și la o performanță generală îmbunătățită.
-
-Suportul Comunității: Selenium are o comunitate mai mare și o documentație mai bogată în comparație cu Playwright. Pentru începători, parcurgerea unui curs de automatizare Playwright poate oferi îndrumări și resurse pentru a începe eficient.
+În concluzie, dacă ești în căutarea unei soluții moderne, mai performante și mai ușor de utilizat, Playwright ar putea fi alegerea potrivită. Totuși, dacă te bazezi deja pe Selenium și ești mulțumit de funcționalitățile sale, rămânerea cu acesta poate fi o opțiune bună. Este important să testam ambele instrumente pentru a vedea care se potrivește cel mai bine nevoilor noastre.
 
 
-Pentru proietul nostru am ales sa folosim Selenium, sacrificand astfel viteza de executare a testelor. Aceasta decizie a avut loc dupa ce am observat nivelul de resurse si documentatii disponibile online pentru fiecare framework. Alti factori care ne-au influentat decizia au fost: flexibilitatea pe care o ofera Selenium in localizarea elementelor - pentru incepatori ca noi s-a dovedit a fi o varianta buna de invatare deoarece includem manual anumite functionalitati care sunt incluse automat in Playwright, posibilitatea testarii pe mai multe browsere si sisteme de operare.
 
--Flowchart pentru a intelege utilitatea aplicatiei initiale:
+-Diagrama cu fluxul aplicatiei pentru a intelege utilitatea aplicatiei initiale:
 
 <img width="436" alt="image" src="https://github.com/Cristina-e/Testare/assets/82153676/a522e9a7-556d-4a1d-9d98-6efba74f830e">
 
@@ -49,8 +48,13 @@ Pentru proietul nostru am ales sa folosim Selenium, sacrificand astfel viteza de
 
 https://www.youtube.com/playlist?list=PLZ4IZLqUlnoaoI0MhAzQh_RT47fdUF2Lq
 
--Comparatie viteza: 
+-Raport AI: 
+[RaportAI.pdf](https://github.com/Cristina-e/Testare/files/15287113/RaportAI.pdf)
 
-<img width="526" alt="image" src="https://github.com/Cristina-e/Testare/assets/82153676/c960d425-fcbe-469d-8bfb-98d79d8d9905">
+-Prezentare:
+[Testare.pptx](https://github.com/Cristina-e/Testare/files/15287114/Testare.pptx)
 
+sau
+
+https://unibucro0-my.sharepoint.com/:p:/r/personal/elena_enciu_s_unibuc_ro/_layouts/15/Doc.aspx?sourcedoc=%7Bf108c472-b51e-4a0a-b507-582989ac73bb%7D&action=embedview&wdAr=1.7777777777777777
 
